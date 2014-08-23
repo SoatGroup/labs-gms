@@ -4,9 +4,7 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound">
-    <sound>sound\sound0</sound>
-  </sounds>
+  <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sBoule</sprite>
     <sprite>sprites\walk_right</sprite>
@@ -24,7 +22,10 @@
     <sprite>sprites\sMiddleGround</sprite>
     <sprite>sprites\sRightGround</sprite>
     <sprite>sprites\sUnderGround</sprite>
-    <sprite>sprites\sprite29</sprite>
+    <sprite>sprites\sStalact</sprite>
+    <sprite>sprites\sprite17</sprite>
+    <sprite>sprites\sprite18</sprite>
+    <sprite>sprites\crushed</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bFond</background>
@@ -39,25 +40,26 @@
     <script>scripts\ProcessBoule.gml</script>
     <script>scripts\GetBlockCollision.gml</script>
     <script>scripts\ProcessGameOver.gml</script>
+    <script>scripts\LevelGenerator.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fdefault</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oGame</object>
+    <object>objects\oGameMotor</object>
     <object>objects\oBoule</object>
     <object>objects\player</object>
     <object>objects\oPique</object>
     <object>objects\oFleche</object>
     <object>objects\oStart</object>
     <object>objects\oGameOver</object>
-    <object>objects\oCaisse</object>
     <object>objects\oFlatGround</object>
-    <object>objects\oGroundGenerator</object>
     <object>objects\oLeftGround</object>
-    <object>objects\oMiddleGround</object>
+    <object>objects\MiddleGround</object>
     <object>objects\oRightGround</object>
     <object>objects\oUnderGround</object>
+    <object>objects\oStalact</object>
+    <object>objects\oCaramba</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomStart</room>

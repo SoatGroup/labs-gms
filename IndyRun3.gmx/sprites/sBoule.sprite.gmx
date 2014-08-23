@@ -24,11 +24,5 @@
     <frame index="1">images\sBoule_1.png</frame>
     <frame index="2">images\sBoule_2.png</frame>
     <frame index="3">images\sBoule_3.png</frame>
-    <frame index="4">images\sBoule_4.png</frame>
-    <frame index="5">images\sBoule_5.png</frame>
-    <frame index="6">images\sBoule_6.png</frame>
-    <frame index="7">images\sBoule_7.png</frame>
-    <frame index="8">images\sBoule_8.png</frame>
-    <frame index="9">images\sBoule_9.png</frame>
   </frames>
 </sprite>

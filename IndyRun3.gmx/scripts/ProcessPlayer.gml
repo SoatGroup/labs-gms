@@ -62,7 +62,7 @@ else{
 
 
 // If moving left, check LEFT collision
-if( keyboard_check(vk_left) ) 
+if( keyboard_check(vk_left) || gamepad_axis_value(0, gp_axislh) < -0.5) 
 {
     dir=-1;
     if(!jump){
@@ -78,7 +78,7 @@ if( keyboard_check(vk_left) )
     {
         x = oldx;
     }    
-}else if( keyboard_check(vk_right) )
+}else if( keyboard_check(vk_right) || gamepad_axis_value(0, gp_axislh) > 0.5 )
 {
     // Otherwise, check collision to the right
     dir=1;

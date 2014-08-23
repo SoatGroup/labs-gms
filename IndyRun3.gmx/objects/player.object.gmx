@@ -29,6 +29,8 @@
 InitialisePlayer();
 
 child = -1;
+crushedbool=0;
+crushcounter=0;
 
 
 
@@ -55,8 +57,49 @@ child = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Process the player (move+collision)
+            <string>if (gamepad_button_check_pressed(0,gp_face1)){
+//jump
+if( jump ) exit;
+instance_create(player.x-128, player.y-64, oCaramba);
+grav=-24;
+jump=true;
+}
+
+/// Process the player (move+collision)
 ProcessPlayer();
+
+/*if(crushedbool==1){
+crushcounter += 1;
+if (crushcounter == 18){
+instance_destroy();
+ProcessGameOver();
+}
+}*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oStalact">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>instance_destroy();
+ProcessGameOver();
+
 </string>
           </argument>
         </arguments>
@@ -129,8 +172,16 @@ ProcessGameOver();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>/*sprite_index = crushed;
+crushedbool = 1;
+object_set_solid(player,false);
+object_set_solid(oBoule,false);*/
+
+instance_destroy();
 ProcessGameOver();
+
+
+
 
 </string>
           </argument>
@@ -156,6 +207,7 @@ ProcessGameOver();
             <kind>1</kind>
             <string>/// Do payer "jump"
 if( jump ) exit;
+instance_create(player.x-128, player.y-64, oCaramba);
 grav=-24;
 jump=true;
 
