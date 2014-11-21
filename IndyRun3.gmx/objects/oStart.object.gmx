@@ -49,7 +49,7 @@ global.myFont = fdefault;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (keyboard_check(vk_enter)){
+            <string>if (keyboard_check(vk_enter) || gamepad_button_check_pressed(0,gp_face3) || gamepad_button_check_pressed(0,gp_start)){
 room_goto(room0);
 }
 </string>

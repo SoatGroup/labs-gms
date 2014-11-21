@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>posCreation =0;
+            <string>posCreation=0;
 </string>
           </argument>
         </arguments>
@@ -58,26 +58,45 @@ instance_create(posCreation,room_height-128,oPique);
 // fleche
 if (instance_exists(player)){
 if (randFleche &lt; 1){
-f = choose(4,5,6,7);
-instance_create(player.x+960, room_height-32*f,oFleche);
+    t = choose(1,2)
+    if (t==1)
+    {
+        f = choose(4,5,6,7);
+        instance_create(player.x+960, room_height-32*f,oFleche);
+    }
+    else{
+        instance_create(player.x+1024,32,oStalact);   
+    }
 }
 }
 
-//sol
+//sol et plafond
 xsol = posCreation;
 ysol = room_height - 32;
-if (posCreation&lt;20000 &amp;&amp; randNumber &lt; 95){
-
-instance_create(xsol,ysol,oUnderGround);
-instance_create(xsol,ysol-32,oFlatGround);
-}
-else {
-instance_create(xsol,ysol-32,oRightGround);
-instance_create(xsol,ysol,oUnderGround);
-p = choose(3,4,5);
-posCreation +=32*p;
-instance_create(posCreation,ysol-32,oLeftGround);
-instance_create(posCreation,ysol,oUnderGround);
+if(posCreation&gt;1162){
+    if (posCreation&lt;20000 &amp;&amp; randNumber &lt; 95){
+        instance_create(xsol,0,oUnderGround);     
+        instance_create(xsol,ysol,oUnderGround); 
+        instance_create(xsol,ysol-32,oFlatGround);
+    }
+    else {   
+         
+        //trou  avec plafond       
+        instance_create(xsol,ysol-32,oRightGround);
+        instance_create(xsol,ysol,oUnderGround);
+        p = choose(3,4,5);
+        posCreation +=32*p;
+        instance_create(posCreation,ysol-32,oLeftGround);
+        instance_create(posCreation,ysol,oUnderGround);
+        
+        instance_create(xsol,0,oUnderGround);
+        instance_create(xsol+32,0,oUnderGround);
+        instance_create(xsol+64,0,oUnderGround);
+        instance_create(xsol+96,0,oUnderGround);
+        instance_create(xsol+128,0,oUnderGround);
+        instance_create(xsol+160,0,oUnderGround);
+            
+    }
 }
 
 posCreation += 32;
@@ -101,5 +120,8 @@ posCreation += 32;
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>64,64</point>
+  </PhysicsShapePoints>
 </object>
